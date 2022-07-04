@@ -1,7 +1,7 @@
 ---
 title: "INTAROS - IMR Dataset - RGeostats Workshop Course"
 author: "D. Renard, F. Ors"
-date: "March 31st 2019"
+date: "July 4th 2022"
 output:
   html_document: default
   pdf_document: default
@@ -22,7 +22,8 @@ knitr::opts_chunk$set(echo = TRUE,fig.align='center')
 - Loading the library **Intaros** and cancel any possible projection
 
 ```{r Loading Library, message=FALSE, warning=FALSE}
-library(RIntaros)
+library(RIntaros) # 2.4
+library(mapdata)
 projec.toggle(0)
 ```
 
@@ -41,6 +42,7 @@ It is based on the **Annual CTD datasets** from Norwegion Institute of Marine Re
 - the data set is read from a CSV external file
 
 ```{r Reading CSV File}
+setRefDate("1950/01/01")
 dir.name   = getwd()
 data.name  = "../data"
 file.name  = "imr_data_by_10m.csv"
@@ -148,7 +150,7 @@ display_stats(dbg, var, var_scale = var_scale, colors = colors.temp,
 
 - calculating the mean and variance for each year, at 25m depth
 
-```{r Means and variances for Temperature at 20m depth for different years}
+```{r Means and variances for Temperature at 25m depth for different years}
 var       = "Temperature"
 depth     = 25
 
