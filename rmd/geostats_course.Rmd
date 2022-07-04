@@ -23,6 +23,7 @@ knitr::opts_chunk$set(echo = TRUE,fig.align='center')
 
 ```{r Loading Library, message=FALSE, warning=FALSE}
 library(RIntaros) # 2.4
+library(mapdata)
 projec.toggle(0)
 ```
 
@@ -41,6 +42,7 @@ It is based on the **Annual CTD datasets** from Norwegion Institute of Marine Re
 - the data set is read from a CSV external file
 
 ```{r Reading CSV File}
+setRefDate("1950/01/01")
 dir.name   = getwd()
 data.name  = "../data"
 file.name  = "imr_data_by_10m.csv"
